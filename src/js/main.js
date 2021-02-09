@@ -1,7 +1,7 @@
 'use strict';
 
-let shows;
-let favorites = [
+let shows = [];
+let favourites = [
   {
     score: 30.317333,
     show: {
@@ -45,14 +45,15 @@ let favorites = [
     },
   },
 ];
-const ulShowsContainer = document.querySelector(".js-shows-container");
-const inputElement = document.querySelector(".js-input");
-const buttonElement = document.querySelector(".js-button");
+//console.log(favourites);
+
+const inputElement = document.querySelector('.js-input');
+const buttonElement = document.querySelector('.js-button');
 
 // API
 
 function getDataFromApi() {
-  fetch("http://api.tvmaze.com/search/shows?q=" + inputElement.value)
+  fetch('http://api.tvmaze.com/search/shows?q=' + inputElement.value)
     .then((response) => response.json())
     .then((data) => {
       shows = data;
@@ -67,48 +68,67 @@ function handleSearch() {
   getDataFromApi();
 }
 
-buttonElement.addEventListener("click", handleSearch);
+buttonElement.addEventListener('click', handleSearch);
 
 // LOCAL STORAGE
 
 function setInLocalStorage() {
-  const stringShows = JSON.stringify(favorites);
-  localStorage.setItem("data", stringShows);
+  const stringShows = JSON.stringify(favourites);
+  localStorage.setItem('data', stringShows);
 }
 
 function getFromLocalStorage() {
-  const localStorageShows = localStorage.getItem("data");
+  const localStorageShows = localStorage.getItem('data');
   if (localStorageShows === null) {
-    favorites = [];
+    favourites = [];
   } else {
     const arrayShows = JSON.parse(localStorageShows);
-    favorites = arrayShows;
+    favourites = arrayShows;
     paintShows();
   }
 }
 
-// PAINT
+
+// PAINT SHOWS
 
 const defaultImg = 'https://via.placeholder.com/210x295/ffffff/666666/?';
 
 function paintShows() {
   let htmlCode = ``;
-  for (const show of shows) {
-    //console.log(show.show);
-    const showTitle = show.show;
-    htmlCode += `<li class="show">`;
-    htmlCode += `<h2 class="show__title">${showTitle.name}</h2>`;
-    const showImage = showTitle.image;
+  for (const serie of shows) {
+    const showElement = serie.show;
+    htmlCode += `<li class="show js-show id="${showElement.id}">`;
+    htmlCode += `<h2 class="show__title">${showElement.name}</h2>`;
+    const showImage = showElement.image;
     if (showImage === null) {
       htmlCode += `<img src="${defaultImg}">`;
     } else {
       htmlCode += `<img src="${showImage.medium}" alt="Cartel Serie"></img>`;
     }
-    htmlCode += `<li class="show">`;
+    htmlCode += `</li>`;
   }
+  const ulShowsContainer = document.querySelector('.js-shows-container');
   ulShowsContainer.innerHTML = htmlCode;
+  listenShowEvents();
+
 }
 
-// START APP
+// LISTEN SHOW EVENTS
+
+function listenShowEvents() {
+  const favourites = document.querySelectorAll('.js-show');
+  for (const favElement of favourites) {
+    favElement.addEventListener('click', handleFavourite );
+  }
+}
+
+function handleFavourite(ev) {
+  console.log('Me han clickado......', ev.currentTarget);
+}
+
+
+
+
+// START APP∫
 
 getFromLocalStorage();

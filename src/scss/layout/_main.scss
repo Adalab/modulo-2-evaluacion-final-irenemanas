@@ -1,0 +1,45 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shows__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 50px;
+  list-style: none;
+
+  &--favourites {
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &--shows {
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+}
+.show {
+  background-color: black;
+  margin-bottom: 10px;
+  border: 2px white solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: 10px 10px;
+}
+.favourite {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: 10px 10px;
+}
