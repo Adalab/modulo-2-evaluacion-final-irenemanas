@@ -1,6 +1,8 @@
 'use strict';
 
-const showsContainer = document.querySelector('.js-shows-container');
+
+
+const ulShowsContainer = document.querySelector('.js-shows-container');
 let shows;
 
 
@@ -38,18 +40,26 @@ function getFromLocalStorage() {
 
 // PAINT
 
+const defaultImg = '';
+
 function paintShows() {
   console.log('pintando.....', shows);
   let htmlCode = ``;
   for (const show of shows) {
     console.log(show.show);
+    const showTitle = show.show;
     htmlCode += `<li class="show">`;
-    htmlCode += `<h2 class="show__title">${show.show.name}</h2>`;
-    htmlCode += `<img src="http://static.tvmaze.com/uploads/images/medium_portrait/31/78286.jpg" alt="Cartel Serie"></img>`;
+    htmlCode += `<h2 class="show__title">${showTitle.name}</h2>`;
+    const showImage = showTitle.image;
+    if (showImage === null) {
+      htmlCode += `<img src="$¨defaultImg}">`;
+    } else {
+      htmlCode += `<img src="${showImage.medium}" alt="Cartel Serie"></img>`;
+    }
     htmlCode += `<li class="show">`;
 
   }
-  showsContainer.innerHTML = htmlCode;
+  ulShowsContainer.innerHTML = htmlCode;
 }
 
 
