@@ -5,7 +5,9 @@
 }
 .shows__container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   margin-top: 50px;
   list-style: none;
 
@@ -14,16 +16,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
+    margin-right: 50px;
   }
   &--shows {
-    grid-column: 2/3;
+    grid-column: 2/4;
+    flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
     align-items: center;
     color: white;
   }
 }
 .show {
+  width: 350px;
   background-color: black;
   margin-bottom: 10px;
   border: 2px white solid;
@@ -33,8 +38,14 @@
   align-content: center;
   text-align: center;
   padding: 10px 10px;
+  &__title {
+    padding-bottom: 10px;
+  }
 }
+
 .favourite {
+  width: 200px;
+  height: 100px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -42,4 +53,19 @@
   align-content: center;
   text-align: center;
   padding: 10px 10px;
+  padding-left: 100px;
+  &__title {
+    color: black;
+    font-size: 20px;
+  }
+}
+.form__input {
+  width: 200px;
+  height: 25px;
+}
+.form__button {
+  width: 80px;
+  height: 25px;
+  background-color: black;
+  color: white;
 }
