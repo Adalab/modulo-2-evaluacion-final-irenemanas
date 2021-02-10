@@ -53,7 +53,12 @@ function paintShows() {
   let htmlCode = ``;
   for (const serie of shows) {
     const showElement = serie.show;
-    htmlCode += `<li class="show js-show" id="${showElement.id}">`;
+    const index = favourites.findIndex(objeto => objeto.show.id === showElement.id) ;
+    if (index>=0) {
+      htmlCode += `<li class="show show-favourite js-show" id="${showElement.id}">`; 
+    } else {
+      htmlCode += `<li class="show js-show" id="${showElement.id}">`;
+    }
     htmlCode += `<h2 class="show__title">${showElement.name}</h2>`;
     const showImage = showElement.image;
     if (showImage === null) {
@@ -77,19 +82,15 @@ function listenShowEvents() {
 }
 
 function handleFavourite(ev) {
-  console.log('Me han clickado......', ev.currentTarget);
   const idShow = parseInt(ev.currentTarget.id);
   const index = shows.findIndex(objeto => objeto.show.id === idShow) ;
   favourites.push(shows[index]);
   paintFavourites();
-
+  paintShows();
 }
 
-
 // PAINT FAVOURITES
-
 paintFavourites();
-
 function paintFavourites () {
   let htmlCode2 = ``;
   for (const favourite of favourites) {
@@ -107,8 +108,6 @@ function paintFavourites () {
   const ulFavouritesContainer = document.querySelector('.js-favourites-container');
   ulFavouritesContainer.innerHTML = htmlCode2;
 }
-
-
 
 // START APP∫
 

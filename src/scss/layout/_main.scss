@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: black;
+  color: white;
 }
 .shows__container {
   display: grid;
@@ -16,7 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-right: 50px;
   }
   &--shows {
@@ -46,7 +48,7 @@
 .favourite {
   width: 200px;
   height: 100px;
-  margin-bottom: 10px;
+  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,17 +57,24 @@
   padding: 10px 10px;
   padding-left: 100px;
   &__title {
-    color: black;
-    font-size: 20px;
+    color: white;
+    font-size: 14px;
   }
 }
+.show-favourite {
+  background-color: gray;
+}
 .form__input {
+  margin-top: 20px;
   width: 200px;
   height: 25px;
+  border: 2px white solid;
 }
 .form__button {
   width: 80px;
   height: 25px;
   background-color: black;
   color: white;
+  font-size: 14px;
+  border: 2px white solid;
 }
