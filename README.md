@@ -13,9 +13,9 @@ La aplicación de búsqueda de series consta de dos partes:
 
 La mayor parte del ejercicio está programada con JavaScript aunque también se utiliza puntualmente la maquetación con HTML Y SASS.
 
-Si te gusta la aplicación y quieres ponerte en contacto conmigo **puedes acceder a través de este enlace y enviarme tus comentarios**:
+Si te gusta la aplicación y quieres ponerte en contacto conmigo **puedes acceder a través de este enlace de Linkedin y enviarme tus comentarios**:
 
 - [Irene Mañas](https://www.linkedin.com/in/irene-ma%C3%B1as-alcaide-5343b516b/)
 
-Agradezco las horas de dedicación y la paciencia de nuestros profesores: de nuestros profesores:
+Agradezco las horas de dedicación y la paciencia de nuestros profesores:
 Dayana Romero, Iván Garrido y Miguel del Mazo.
