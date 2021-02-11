@@ -10,7 +10,7 @@ const buttonElement = document.querySelector('.js-button');
 // API
 
 function getDataFromApi() {
-  fetch('http://api.tvmaze.com/search/shows?q=' + inputElement.value)
+  fetch('//api.tvmaze.com/search/shows?q=' + inputElement.value)
     .then((response) => response.json())
     .then((data) => {
       shows = data;
