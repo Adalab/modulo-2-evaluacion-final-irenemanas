@@ -4,6 +4,8 @@
   align-items: center;
   background-color: black;
   color: white;
+  width: 100vw;
+  height: max(100vh, 100%);
 }
 .shows__container {
   display: grid;

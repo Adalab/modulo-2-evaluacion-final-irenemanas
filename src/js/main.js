@@ -1,21 +1,20 @@
-'use strict';
+"use strict";
 
 let shows = [];
 let favourites = [];
 //console.log(favourites);
 
-const inputElement = document.querySelector('.js-input');
-const buttonElement = document.querySelector('.js-button');
+const inputElement = document.querySelector(".js-input");
+const buttonElement = document.querySelector(".js-button");
 
 // API
 
 function getDataFromApi() {
-  fetch('http://api.tvmaze.com/search/shows?q=' + inputElement.value)
+  fetch("http://api.tvmaze.com/search/shows?q=" + inputElement.value)
     .then((response) => response.json())
     .then((data) => {
       shows = data;
       paintShows();
-      setInLocalStorage();
     });
 }
 
@@ -25,17 +24,17 @@ function handleSearch() {
   getDataFromApi();
 }
 
-buttonElement.addEventListener('click', handleSearch);
+buttonElement.addEventListener("click", handleSearch);
 
 // LOCAL STORAGE
 
 function setInLocalStorage() {
   const stringShows = JSON.stringify(favourites);
-  localStorage.setItem('data', stringShows);
+  localStorage.setItem("data", stringShows);
 }
 
 function getFromLocalStorage() {
-  const localStorageShows = localStorage.getItem('data');
+  const localStorageShows = localStorage.getItem("data");
   if (localStorageShows === null) {
     favourites = [];
   } else {
@@ -47,15 +46,15 @@ function getFromLocalStorage() {
 
 // PAINT SHOWS
 
-const defaultImg = 'https://via.placeholder.com/210x295/ffffff/666666/?';
+const defaultImg = "https://via.placeholder.com/210x295/ffffff/666666/?";
 
 function paintShows() {
   let htmlCode = ``;
   for (const serie of shows) {
     const showElement = serie.show;
-    const index = favourites.findIndex(objeto => objeto.show.id === showElement.id) ;
-    if (index>=0) {
-      htmlCode += `<li class="show show-favourite js-show" id="${showElement.id}">`; 
+    const index = favourites.findIndex((objeto) => objeto.show.id === showElement.id);
+    if (index >= 0) {
+      htmlCode += `<li class="show show-favourite js-show" id="${showElement.id}">`;
     } else {
       htmlCode += `<li class="show js-show" id="${showElement.id}">`;
     }
@@ -68,34 +67,34 @@ function paintShows() {
     }
     htmlCode += `</li>`;
   }
-  const ulShowsContainer = document.querySelector('.js-shows-container');
+  const ulShowsContainer = document.querySelector(".js-shows-container");
   ulShowsContainer.innerHTML = htmlCode;
   listenShowEvents();
 }
 
 // LISTEN SHOW EVENTS
 function listenShowEvents() {
-  const favourites = document.querySelectorAll('.js-show');
+  const favourites = document.querySelectorAll(".js-show");
   for (const favElement of favourites) {
-    favElement.addEventListener('click', handleFavourite );
+    favElement.addEventListener("click", handleFavourite);
   }
 }
 
 function handleFavourite(ev) {
   const idShow = parseInt(ev.currentTarget.id);
-  const index = shows.findIndex(objeto => objeto.show.id === idShow) ;
+  const index = shows.findIndex((objeto) => objeto.show.id === idShow);
   favourites.push(shows[index]);
   paintFavourites();
   paintShows();
+  setInLocalStorage();
 }
 
 // PAINT FAVOURITES
-paintFavourites();
-function paintFavourites () {
+function paintFavourites() {
   let htmlCode2 = ``;
   for (const favourite of favourites) {
     const favouriteElement = favourite.show;
-    htmlCode2 += `<li class="favourite js-show" id="${favouriteElement.id}">`;
+    htmlCode2 += `<li class="favourite js-favourite" id="${favouriteElement.id}">`;
     htmlCode2 += `<h2 class="favourite__title">${favouriteElement.name}</h2>`;
     const favouriteImage = favouriteElement.image;
     if (favouriteImage === null) {
@@ -105,7 +104,7 @@ function paintFavourites () {
     }
     htmlCode2 += `</li>`;
   }
-  const ulFavouritesContainer = document.querySelector('.js-favourites-container');
+  const ulFavouritesContainer = document.querySelector(".js-favourites-container");
   ulFavouritesContainer.innerHTML = htmlCode2;
 }
 
