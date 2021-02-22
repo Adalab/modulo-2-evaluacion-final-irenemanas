@@ -2,13 +2,11 @@
 
 let shows = [];
 let favourites = [];
-//console.log(favourites);
 
 const inputElement = document.querySelector(".js-input");
 const buttonElement = document.querySelector(".js-button");
 
 // API
-
 function getDataFromApi() {
   fetch("http://api.tvmaze.com/search/shows?q=" + inputElement.value)
     .then((response) => response.json())
@@ -19,7 +17,6 @@ function getDataFromApi() {
 }
 
 // SEARCH TV-SHOW
-
 function handleSearch() {
   getDataFromApi();
 }
@@ -27,7 +24,6 @@ function handleSearch() {
 buttonElement.addEventListener("click", handleSearch);
 
 // LOCAL STORAGE
-
 function setInLocalStorage() {
   const stringShows = JSON.stringify(favourites);
   localStorage.setItem("data", stringShows);
@@ -45,7 +41,6 @@ function getFromLocalStorage() {
 }
 
 // PAINT SHOWS
-
 const defaultImg = "https://via.placeholder.com/210x295/ffffff/666666/?";
 
 function paintShows() {
@@ -80,10 +75,16 @@ function listenShowEvents() {
   }
 }
 
+// HANDLE FAVOURITES
 function handleFavourite(ev) {
   const idShow = parseInt(ev.currentTarget.id);
-  const index = shows.findIndex((objeto) => objeto.show.id === idShow);
-  favourites.push(shows[index]);
+  const indexShow = shows.findIndex((objeto) => objeto.show.id === idShow);
+  const indexFavourites = favourites.findIndex((favourite) => favourite.show.id === idShow);
+  if (indexFavourites === -1) {
+    favourites.push(shows[indexShow]);
+  } else {
+    favourites.splice(indexFavourites, 1);
+  }
   paintFavourites();
   paintShows();
   setInLocalStorage();
@@ -108,6 +109,5 @@ function paintFavourites() {
   ulFavouritesContainer.innerHTML = htmlCode2;
 }
 
-// START APP∫
-
+// START APP
 getFromLocalStorage();
