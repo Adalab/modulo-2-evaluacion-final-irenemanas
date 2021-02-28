@@ -58,7 +58,7 @@ function paintShows() {
     if (showImage === null) {
       htmlCode += `<img src="${defaultImg}">`;
     } else {
-      htmlCode += `<img src="${showImage.medium}" alt="Cartel Serie"></img>`;
+      htmlCode += `<img src="${showImage.medium}" class="show__image" alt="Cartel Serie"></img>`;
     }
     htmlCode += `</li>`;
   }
@@ -101,7 +101,7 @@ function paintFavourites() {
     if (favouriteImage === null) {
       htmlCode2 += `<img src="${defaultImg}">`;
     } else {
-      htmlCode2 += `<img src="${favouriteImage.medium}" alt="Cartel Serie"></img>`;
+      htmlCode2 += `<img src="${favouriteImage.medium}" class="favourite__image" alt="Cartel Serie"></img>`;
     }
     htmlCode2 += `</li>`;
   }

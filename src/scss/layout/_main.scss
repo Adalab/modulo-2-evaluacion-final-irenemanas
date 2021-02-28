@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
   color: white;
   height: 100%;
 }
@@ -31,10 +30,11 @@
   }
 }
 .show {
-  width: 350px;
+  width: 300px;
   background-color: black;
   margin-bottom: 10px;
   border: 2px white solid;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,14 +42,20 @@
   text-align: center;
   padding: 10px 10px;
   &__title {
-    padding-bottom: 10px;
+    padding: 10px 0 8px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+  }
+  &__image {
+    padding: 10px 0 8px;
+    border-radius: 14px;
   }
 }
 
 .favourite {
   width: 200px;
   height: 100px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,24 +66,34 @@
   &__title {
     color: white;
     font-size: 14px;
+    margin-bottom: 5px;
+  }
+  &__image {
+    margin-bottom: 10px;
+    border-radius: 20px;
   }
 }
 .show-favourite {
   background-color: white;
-  color: black;
+  color: white;
   border: 2px black solid;
 }
 .form__input {
   margin-top: 20px;
   width: 200px;
-  height: 25px;
+  height: 30px;
   border: 2px white solid;
+  background-color: white;
+  font-size: 16px;
+  border-radius: 20px;
+  padding-left: 5px;
 }
 .form__button {
   width: 80px;
-  height: 25px;
+  height: 30px;
   background-color: black;
   color: white;
   font-size: 14px;
   border: 2px white solid;
+  border-radius: 20px;
 }
