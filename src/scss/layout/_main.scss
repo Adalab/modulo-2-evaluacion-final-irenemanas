@@ -1,10 +1,9 @@
 .main {
-  width: 100%;
   &__form {
     display: flex;
     flex-direction: column;
-    width: 100vw;
     align-items: center;
+    width: 100%;
     &--input {
       margin-top: 20px;
       width: 200px;
@@ -27,31 +26,41 @@
     }
   }
   &__list {
-    width: 100%;
     margin-top: 50px;
     display: grid;
-    grid-template-columns: 1fr 70%;
+    grid-template-columns: 35% 1fr;
     &--favourites {
-      width: 100px;
       grid-column: 1/2;
       list-style: none;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding-right: 60px;
-      margin-right: 20px;
+      padding-left: 16px;
+      padding-bottom: 30px;
+      &-title {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 20px;
+      }
     }
     &--shows {
-      width: 240px;
       grid-column: 2/3;
       color: white;
       list-style: none;
-      padding-left: 20px;
+      padding-left: 16px;
+      &-title {
+        font-size: 20px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 400;
+        text-align: center;
+      }
     }
   }
 }
 
 .show {
+  width: 200px;
   background-color: black;
   margin-bottom: 10px;
   border: 2px white solid;
@@ -74,17 +83,12 @@
 }
 
 .favourite {
-  width: 200px;
-  margin-bottom: 20px;
-  margin-right: 10px;
+  width: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   text-align: center;
-  padding: 10px 10px;
-  padding-left: 100px;
-
   &__title {
     color: white;
     font-size: 18px;

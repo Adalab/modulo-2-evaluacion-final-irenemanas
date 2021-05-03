@@ -63,8 +63,8 @@ function paintShows() {
     }
     htmlCode += `</li>`;
   }
-  const ulShowsContainer = document.querySelector(".js-shows-container");
-  ulShowsContainer.innerHTML = htmlCode;
+  const ulShowsList = document.querySelector(".js-shows-list");
+  ulShowsList.innerHTML = htmlCode;
   listenShowEvents();
 }
 
@@ -106,8 +106,8 @@ function paintFavourites() {
     }
     htmlCode2 += `</li>`;
   }
-  const ulFavouritesContainer = document.querySelector(".js-favourites-container");
-  ulFavouritesContainer.innerHTML = htmlCode2;
+  const ulFavouritesList = document.querySelector(".js-favourites-list");
+  ulFavouritesList.innerHTML = htmlCode2;
 }
 
 // START APP
