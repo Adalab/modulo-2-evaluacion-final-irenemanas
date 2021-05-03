@@ -1,36 +1,57 @@
 .page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  &__header {
+    padding-top: 20px;
+    grid-column: 1/3;
+    width: 100%;
+    text-align: center;
+  }
+}
+.form {
+  grid-column: 1/3;
   display: flex;
   flex-direction: column;
+  width: 100vw;
   align-items: center;
-  color: white;
-  height: 100%;
 }
+.form__input {
+  margin-top: 20px;
+  width: 200px;
+  height: 30px;
+  border: 2px white solid;
+  background-color: white;
+  font-size: 16px;
+  border-radius: 20px;
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+.form__button {
+  width: 80px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  border: 2px white solid;
+  border-radius: 20px;
+}
+
 .shows__container {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
   margin-top: 50px;
   list-style: none;
 
   &--favourites {
     grid-column: 1/2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-top: 40px;
-    margin-right: 50px;
   }
   &--shows {
-    grid-column: 2/4;
-    flex-wrap: wrap;
-    display: flex;
-    align-items: center;
+    grid-column: 2/3;
     color: white;
   }
 }
 .show {
-  width: 300px;
+  width: 200px;
   background-color: black;
   margin-bottom: 10px;
   border: 2px white solid;
@@ -54,7 +75,6 @@
 
 .favourite {
   width: 200px;
-  height: 100px;
   margin-bottom: 80px;
   display: flex;
   flex-direction: column;
@@ -70,30 +90,11 @@
   }
   &__image {
     margin-bottom: 10px;
-    border-radius: 20px;
+    border-radius: 5px;
   }
 }
 .show-favourite {
   background-color: white;
   color: white;
   border: 2px black solid;
-}
-.form__input {
-  margin-top: 20px;
-  width: 200px;
-  height: 30px;
-  border: 2px white solid;
-  background-color: white;
-  font-size: 16px;
-  border-radius: 20px;
-  padding-left: 5px;
-}
-.form__button {
-  width: 80px;
-  height: 30px;
-  background-color: black;
-  color: white;
-  font-size: 14px;
-  border: 2px white solid;
-  border-radius: 20px;
 }
