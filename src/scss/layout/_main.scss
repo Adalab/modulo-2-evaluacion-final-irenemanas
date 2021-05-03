@@ -41,6 +41,7 @@
         text-transform: uppercase;
         font-weight: 400;
         font-size: 20px;
+        padding-bottom: 20px;
       }
     }
     &--shows {
@@ -54,6 +55,7 @@
         text-transform: uppercase;
         font-weight: 400;
         text-align: center;
+        padding-bottom: 40px;
       }
     }
   }
@@ -97,7 +99,7 @@
   }
   &__image {
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
   }
 }
 .show-favourite {
