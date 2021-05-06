@@ -25,10 +25,10 @@
       border-radius: 20px;
     }
   }
-  &__list {
+  &__series {
     margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(5 * 1fr);
+    grid-template-columns: 35% 1fr;
     &--favourites {
       grid-column: 1/2;
       list-style: none;
@@ -43,7 +43,7 @@
       }
     }
     &--shows {
-      grid-column: 2/5;
+      grid-column: 2/3;
       color: white;
       list-style: none;
       padding-left: min($numbers: 16px);
@@ -55,6 +55,16 @@
         font-weight: 400;
         text-align: center;
         padding-bottom: 20px;
+      }
+      &-list {
+        @media all and (min-width: 550px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        @media all and (min-width: 768px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
       }
     }
   }
