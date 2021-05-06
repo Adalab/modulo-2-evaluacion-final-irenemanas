@@ -1,10 +1,16 @@
-<div class="page">
-  <form>
-    <input type="text" class="form__input js-input" />
-    <button type="button" class="form__button js-button">BUSCAR</button>
+<main class="main">
+  <form class="main__form">
+    <input type="text" class="main__form--input js-input" />
+    <button type="button" class="main__form--button js-button">BUSCAR</button>
   </form>
-  <div class="shows__container">
-    <ul class="shows__container--favourites js-favourites-container"></ul>
-    <ul class="shows__container--shows js-shows-container"></ul>
-  </div>
-</div>
+  <section class="main__list">
+    <div class="main__list--favourites">
+      <h3 class="main__list--favourites-title">favoritas</h3>
+      <ul class="js-favourites-list"></ul>
+    </div>
+    <div class="main__list--shows">
+      <h3 class="main__list--shows-title">selec/deselec</h3>
+      <ul class="js-shows-list"></ul>
+    </div>
+  </section>
+</main>

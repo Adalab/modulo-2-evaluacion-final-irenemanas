@@ -1,0 +1,12 @@
+.page {
+  &__header {
+    width: 100%;
+    &--title {
+      padding-top: 30px;
+      color: white;
+      text-align: center;
+      font-family: $font-main;
+      font-weight: 300;
+    }
+  }
+}
