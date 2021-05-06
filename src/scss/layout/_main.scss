@@ -28,13 +28,11 @@
   &__list {
     margin-top: 50px;
     display: grid;
-    grid-template-columns: 35% 1fr;
+    grid-template-columns: repeat(5 * 1fr);
     &--favourites {
       grid-column: 1/2;
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      padding-left: 16px;
+      padding-left: min($numbers: 16px);
       padding-bottom: 30px;
       &-title {
         color: white;
@@ -45,11 +43,12 @@
       }
     }
     &--shows {
-      grid-column: 2/3;
+      grid-column: 2/5;
       color: white;
       list-style: none;
-      padding-left: 16px;
+      padding-left: min($numbers: 16px);
       &-title {
+        grid-column: 2/5;
         font-size: 20px;
         color: white;
         text-transform: uppercase;
@@ -94,6 +93,7 @@
   border: 2px white solid;
   border-radius: 10px;
   padding: 5px 5px;
+  margin-bottom: 10px;
   &__title {
     color: white;
     font-size: 18px;
