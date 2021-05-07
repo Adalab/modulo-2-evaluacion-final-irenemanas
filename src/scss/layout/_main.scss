@@ -29,17 +29,27 @@
     margin-top: 50px;
     display: grid;
     grid-template-columns: 35% 1fr;
+    justify-content: center;
     &--favourites {
       grid-column: 1/2;
       list-style: none;
       padding-left: min($numbers: 16px);
       padding-bottom: 30px;
+      width: fit-content;
       &-title {
         color: white;
         text-transform: uppercase;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 18px;
         padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+      }
+      &-list {
+        display: flex;
+        flex-direction: column;
       }
     }
     &--shows {
@@ -47,16 +57,22 @@
       color: white;
       list-style: none;
       padding-left: min($numbers: 16px);
+      width: fit-content;
       &-title {
-        grid-column: 2/5;
-        font-size: 20px;
+        font-size: 18px;
         color: white;
         text-transform: uppercase;
         font-weight: 400;
         text-align: center;
         padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
       }
       &-list {
+        display: grid;
+        grid-template-columns: 1fr;
         @media all and (min-width: 550px) {
           display: grid;
           grid-template-columns: 1fr 1fr;
