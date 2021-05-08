@@ -36,6 +36,7 @@
     display: grid;
     grid-template-columns: 35% 1fr;
     justify-content: center;
+    height: min($numbers: 75vh);
     &--favourites {
       grid-column: 1/2;
       list-style: none;
@@ -75,6 +76,7 @@
       list-style: none;
       padding-left: min($numbers: 4px);
       width: fit-content;
+      padding-bottom: 50px;
       @media all and (min-width: 550px) {
         padding-left: 0;
         padding-right: min($numbers: 10px);
