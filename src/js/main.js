@@ -57,7 +57,7 @@ function paintShows() {
     }
     const showImage = showElement.image;
     if (showImage === null) {
-      htmlCode += `<img src="${defaultImg}">`;
+      htmlCode += `<img src="${defaultImg}" class="show__image">`;
     } else {
       htmlCode += `<img src="${showImage.medium}" class="show__image" alt="Cartel Serie"></img>`;
     }

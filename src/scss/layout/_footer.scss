@@ -1,0 +1,15 @@
+.footer {
+  width: 100%;
+  background-color: white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 300;
+  position: absolute;
+  bottom: 0;
+  &__copy {
+    background-color: white;
+  }
+}

@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Buscador de Series</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/main.css" />
@@ -15,19 +16,27 @@
   <body>
     <div class="page">
       <header class="page__header">
-        <h1>BUSCADOR DE SERIES</h1>
+        <h1 class="page__header--title">BUSCADOR DE SERIES</h1>
       </header>
 
-      <div class="page">
-        <form>
-          <input type="text" class="form__input js-input" />
-          <button type="button" class="form__button js-button">BUSCAR</button>
+      <main class="main">
+        <form class="main__form">
+          <input type="text" class="main__form--input no-outline js-input" />
+          <button type="button" class="main__form--button js-button">BUSCAR</button>
         </form>
-        <div class="shows__container">
-          <ul class="shows__container--favourites js-favourites-container"></ul>
-          <ul class="shows__container--shows js-shows-container"></ul>
-        </div>
-      </div>
+        <section class="main__series">
+          <div class="main__series--favourites">
+            <h3 class="main__series--favourites-title">favoritas</h3>
+            <ul class="main__series--favourites-list js-favourites-list"></ul>
+          </div>
+          <div class="main__series--shows">
+            <h3 class="main__series--shows-title">seleccionar / deseleccionar</h3>
+            <ul class="main__series--shows-list js-shows-list"></ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer"><small class="footer__copy">@ Irene Manas</small></footer>
 
     </div>
     <script src="./assets/js/main.js"></script>

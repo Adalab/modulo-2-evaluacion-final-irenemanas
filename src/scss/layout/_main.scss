@@ -4,6 +4,9 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    @media all and (min-width: 550px) {
+      padding-left: 30px;
+    }
     &--input {
       margin-top: 20px;
       width: 200px;
@@ -14,6 +17,9 @@
       border-radius: 20px;
       padding-left: 10px;
       margin-bottom: 16px;
+      &:focus {
+        outline: none;
+      }
     }
     &--button {
       width: 80px;
@@ -33,9 +39,15 @@
     &--favourites {
       grid-column: 1/2;
       list-style: none;
-      padding-left: min($numbers: 16px);
-      padding-bottom: 30px;
-      width: fit-content;
+      padding-left: min($numbers: 12px);
+      padding-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      align-items: center;
+      @media all and (min-width: 550px) {
+        padding-left: min($numbers: 16px);
+      }
       &-title {
         color: white;
         text-transform: uppercase;
@@ -46,18 +58,27 @@
         align-items: center;
         justify-content: center;
         height: 50px;
+        @media all and (min-width: 768px) {
+          font-size: 24px;
+        }
       }
       &-list {
         display: flex;
         flex-direction: column;
+        @media all and (min-width: 550px) {
+        }
       }
     }
     &--shows {
       grid-column: 2/3;
       color: white;
       list-style: none;
-      padding-left: min($numbers: 16px);
+      padding-left: min($numbers: 4px);
       width: fit-content;
+      @media all and (min-width: 550px) {
+        padding-left: 0;
+        padding-right: min($numbers: 10px);
+      }
       &-title {
         font-size: 18px;
         color: white;
@@ -69,10 +90,14 @@
         align-items: center;
         justify-content: center;
         height: 50px;
+        @media all and (min-width: 768px) {
+          font-size: 24px;
+        }
       }
       &-list {
         display: grid;
         grid-template-columns: 1fr;
+        padding-left: min($numbers: 10px);
         @media all and (min-width: 550px) {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -98,8 +123,10 @@
   align-content: center;
   text-align: center;
   padding: 10px 10px;
+  @media all and (min-width: 550px) {
+    margin-right: 5px;
+  }
   &__title {
-    padding: 10px 0 8px;
     margin-bottom: 10px;
     border-radius: 14px;
     font-weight: 300;
